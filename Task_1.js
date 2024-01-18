@@ -131,13 +131,13 @@ function findTotal() {
             BestDiscount.CartCostWithDiscount = applicableDiscounts.bulk_5_discount.TotalCartCost;
             BestDiscount.CartCostWithoutDiscount = applicableDiscounts.bulk_5_discount.TotalCartCostWithoutDiscount;
             BestDiscount.name = applicableDiscounts.bulk_5_discount.name;
-            BestDiscount.DiscountValue = applicableDiscounts.bulk_5_discount.TotalCartCostWithoutDiscount - applicableDiscounts.flat_10_Discount.TotalCartCost;
+            BestDiscount.DiscountValue = applicableDiscounts.bulk_5_discount.TotalCartCostWithoutDiscount - applicableDiscounts.bulk_5_discount.TotalCartCost;
         } else {
             if (BestDiscount.CartCostWithDiscount > applicableDiscounts.bulk_5_discount.TotalCartCost) {
                 BestDiscount.CartCostWithDiscount = applicableDiscounts.bulk_5_discount.TotalCartCost;
                 BestDiscount.CartCostWithoutDiscount = applicableDiscounts.bulk_5_discount.TotalCartCostWithoutDiscount;
                 BestDiscount.name = applicableDiscounts.bulk_5_discount.name;
-                BestDiscount.DiscountValue = applicableDiscounts.bulk_5_discount.TotalCartCostWithoutDiscount - applicableDiscounts.flat_10_Discount.TotalCartCost;
+                BestDiscount.DiscountValue = applicableDiscounts.bulk_5_discount.TotalCartCostWithoutDiscount - applicableDiscounts.bulk_5_discount.TotalCartCost;
             }
         }
     }
@@ -147,13 +147,13 @@ function findTotal() {
             BestDiscount.CartCostWithDiscount = applicableDiscounts.bulk_10_discount.TotalCartCost;
             BestDiscount.CartCostWithoutDiscount = applicableDiscounts.bulk_10_discount.TotalCartCostWithoutDiscount;
             BestDiscount.name = applicableDiscounts.bulk_10_discount.name;
-            BestDiscount.DiscountValue = applicableDiscounts.bulk_10_discount.TotalCartCostWithoutDiscount - applicableDiscounts.flat_10_Discount.TotalCartCost;
+            BestDiscount.DiscountValue = applicableDiscounts.bulk_10_discount.TotalCartCostWithoutDiscount - applicableDiscounts.bulk_10_discount.TotalCartCost;
         } else {
             if (BestDiscount.CartCostWithDiscount > applicableDiscounts.bulk_10_discount.TotalCartCost) {
                 BestDiscount.CartCostWithDiscount = applicableDiscounts.bulk_10_discount.TotalCartCost;
                 BestDiscount.CartCostWithoutDiscount = applicableDiscounts.bulk_10_discount.TotalCartCostWithoutDiscount;
                 BestDiscount.name = applicableDiscounts.bulk_10_discount.name;
-                BestDiscount.DiscountValue = applicableDiscounts.bulk_10_discount.TotalCartCostWithoutDiscount - applicableDiscounts.flat_10_Discount.TotalCartCost;
+                BestDiscount.DiscountValue = applicableDiscounts.bulk_10_discount.TotalCartCostWithoutDiscount - applicableDiscounts.bulk_10_discount.TotalCartCost;
             }
         }
     }
@@ -163,16 +163,17 @@ function findTotal() {
             BestDiscount.CartCostWithDiscount = applicableDiscounts.tiered_50_discount.TotalCartCost;
             BestDiscount.CartCostWithoutDiscount = applicableDiscounts.tiered_50_discount.TotalCartCostWithoutDiscount;
             BestDiscount.name = applicableDiscounts.tiered_50_discount.name;
-            BestDiscount.DiscountValue = applicableDiscounts.tiered_50_discount.TotalCartCostWithoutDiscount - applicableDiscounts.flat_10_Discount.TotalCartCost;
+            BestDiscount.DiscountValue = applicableDiscounts.tiered_50_discount.TotalCartCostWithoutDiscount - applicableDiscounts.tiered_50_discount.TotalCartCost;
         } else {
             if (BestDiscount.CartCostWithDiscount > applicableDiscounts.tiered_50_discount.TotalCartCost) {
                 BestDiscount.CartCostWithDiscount = applicableDiscounts.tiered_50_discount.TotalCartCost;
                 BestDiscount.CartCostWithoutDiscount = applicableDiscounts.tiered_50_discount.TotalCartCostWithoutDiscount;
                 BestDiscount.name = applicableDiscounts.tiered_50_discount.name;
-                BestDiscount.DiscountValue = applicableDiscounts.tiered_50_discount.TotalCartCostWithoutDiscount - applicableDiscounts.flat_10_Discount.TotalCartCost;
+                BestDiscount.DiscountValue = applicableDiscounts.tiered_50_discount.TotalCartCostWithoutDiscount - applicableDiscounts.tiered_50_discount.TotalCartCost;
             }
         }
     }
+
 
 
     // Apply shippingCost
@@ -199,6 +200,7 @@ function findTotal() {
 
     console.log(`Subtotal: $${cartTotal.toFixed(2)}`);
     console.log(`Discount Applied: ${BestDiscount.name}`);
+    console.log(`Discount Amount: ${BestDiscount.DiscountValue}`);
     console.log(`Shipping Fee: $${TotalShippingFee.toFixed(2)}`);
     console.log(`Gift Wrap Fee: $${giftWrapFee.toFixed(2)}`);
     console.log(`Total: $${totalAmount.toFixed(2)}`);
