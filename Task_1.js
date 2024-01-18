@@ -1,4 +1,8 @@
+// i would recommend https://www.programiz.com/javascript/online-compiler/ this website to run this code. 
+
+
 function findTotal() {
+    // define the array of the products with default properties
     const products = [
         { name: "Product A", price: 20, quantity: 0, isGiftWrapped: false },
         { name: "Product B", price: 40, quantity: 0, isGiftWrapped: false },
@@ -7,14 +11,16 @@ function findTotal() {
 
     let cartTotal = 0;
     let TotalQuantity = 0;
-    let shippingFee = 0;
     let giftWrapFee = 0;
 
     // take inputs from user for each products
     products.forEach(product => {
-        let isWrapped
+        let isWrapped // this is the flag that is used to check whether the product is wraped or not
 
+        // a prompt will be given to enter the input.
         product.quantity = parseInt(prompt(`Enter quantity for ${product.name}: `));
+
+        // if no input entered or any other input other than "yes" will consider as no.
         if (prompt(`Is ${product.name} wrapped as a gift? (yes/no):`).toLowerCase() === "yes") {
             isWrapped = true;
         }
@@ -23,6 +29,7 @@ function findTotal() {
             giftWrapFee += product.quantity;
         }
 
+        // calculate and add to total
         cartTotal += product.quantity * product.price;
         TotalQuantity += product.quantity;
     });
@@ -183,6 +190,7 @@ function findTotal() {
     // total amount
     const totalAmount = BestDiscount.CartCostWithDiscount + TotalShippingFee + giftWrapFee;
 
+    // output the final result as Order Summary
     console.log("\nOrder Summary:");
 
     products.forEach(product => {
@@ -196,4 +204,6 @@ function findTotal() {
     console.log(`Total: $${totalAmount.toFixed(2)}`);
 }
 
+
+// call the function to take the input and calculate
 findTotal()
