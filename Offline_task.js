@@ -25,8 +25,9 @@ function findValidNumber() {
             if (testNumber >= minimumNumber && testNumber <= maximumNumber) {
                 // check if test number present in disabled number
                 if (disabledNumber.includes(number)) {
-                    testNumber += 1;
-                    checkTestNumber(testNumber);
+                        // Increment and repeat Checking
+                        testNumber += 1;
+                        checkTestNumber(testNumber);
                 } else {
                     // valid test Number
                     console.log("Valid Number : ", number)
